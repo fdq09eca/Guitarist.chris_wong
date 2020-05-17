@@ -1,0 +1,145 @@
+$text-color: #202428;
+$bg-color: #eeeeee;
+$banner-text-color: white;
+
+body,
+html {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  padding-top: 20px;
+  background-color: $bg-color;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+%banner-text {
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: $banner-text-color;
+}
+
+.hero-text {
+  @extend %banner-text;
+  * {
+    margin: 10px 20px;
+  }
+}
+
+.sidebar-text {
+  @extend %banner-text;
+  top: 20%;
+  left: 50%;
+  text-align: center;
+}
+
+#bio-img {
+  float: none;
+  border-radius: 15px;
+  width: 50%;
+  margin: 15px;
+}
+
+%full-screen-banner {
+  height: 100%;
+  width: 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero-image {
+  @extend %full-screen-banner;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./assets/images/chris_v2.jpg");
+  position: relative;
+}
+
+.sidebar {
+  @extend %full-screen-banner;
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)),
+    url("./assets/images/guitar_2.jpg");
+  position: fixed;
+  background-position: right 60% bottom 35%;
+  width: 25%;
+}
+
+%faw-pesudo {
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  padding-right: 3px;
+  vertical-align: middle;
+  font-weight: 900;
+}
+#logo {
+  letter-spacing: 2px;
+  &:before {
+    @extend %faw-pesudo;
+    content: "\f7a6";
+  }
+}
+
+#projects,
+.project-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  & ul li a {
+    text-decoration: none;
+  }
+}
+
+.project-thumbnail a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 40px 80px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  margin-bottom: 50px;
+  transition: transform ease-in-out 500ms;
+  &:hover {
+    transform: scale(1.2);
+    transition: transform ease-in-out 500ms;
+  }
+  & img {
+    max-width: 100%;
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+}
+
+.caption {
+  padding: 1rem;
+  letter-spacing: normal;
+  font-weight: bold;
+  text-align: center;
+  color: $text-color;
+  &:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f001 ";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+  }
+}
+
+@media (min-width: 800px) {
+  .project-tile {
+    flex-direction: row;
+    padding: 0 10%;
+  }
+  #bio-img {
+    float: left;
+    width: 25%;
+  }
+}
