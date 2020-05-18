@@ -51,7 +51,7 @@ html {
   background-position: right 60% bottom 35%;
   width: 25%; }
 
-#logo:before {
+#logo::before {
   font-family: "Font Awesome 5 Free";
   display: inline-block;
   padding-right: 3px;
@@ -60,7 +60,7 @@ html {
 
 #logo {
   letter-spacing: 2px; }
-  #logo:before {
+  #logo::before {
     content: "\f7a6"; }
 
 #projects,
@@ -96,7 +96,7 @@ html {
   font-weight: bold;
   text-align: center;
   color: #202428; }
-  .caption:before {
+  .caption::before {
     font-family: "Font Awesome 5 Free";
     content: "\f001 ";
     display: inline-block;

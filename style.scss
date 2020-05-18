@@ -80,7 +80,7 @@ html {
 }
 #logo {
   letter-spacing: 2px;
-  &:before {
+  &::before {
     @extend %faw-pesudo;
     content: "\f7a6";
   }
@@ -123,7 +123,7 @@ html {
   font-weight: bold;
   text-align: center;
   color: $text-color;
-  &:before {
+  &::before {
     font-family: "Font Awesome 5 Free";
     content: "\f001 ";
     display: inline-block;
